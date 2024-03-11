@@ -43,3 +43,11 @@ To get a local copy up and running follow these simple steps.
    ```sh
    rails server
 1. Open your browser and navigate to http://localhost:3000 to see the app in action.
+
+<h3>🤝 Contributing</h3>
+
+We welcome contributions, whether it's feature requests, bug fixes, or code contributions. If you're looking to contribute to Friend2Fly, please first discuss the change you wish to make via issues, email, or any other method with the owners of this repository before making a change.
+
+<h3>📫 Stay in Touch!</h3>
+
+If you want to get in touch you can contact me directly thought linkedin www.linkedin.com/in/pablo-lizardi-hernandez
