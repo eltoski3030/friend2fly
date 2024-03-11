@@ -1,0 +1,8 @@
+/log/*
+!log/.keep
+/tmp
+/storage/*
+!storage/.keep
+.byebug_history
+
+
