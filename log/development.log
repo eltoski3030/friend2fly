@@ -8,3 +8,302 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 13ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 7499)
 
 
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:12:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 195)
+  Rendered layout layouts/application.html.erb (Duration: 156.0ms | Allocations: 97842)
+Completed 200 OK in 161ms (Views: 158.0ms | ActiveRecord: 0.0ms | Allocations: 102167)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-03-11 23:13:53.457948', '2024-03-11 23:13:53.457950') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDestinations (20240311231345)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "destinations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240311231345') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Paris"], ["description", "The City of Light is known for its cafe culture and the Eiffel Tower."], ["created_at", "2024-03-11 23:18:06.665183"], ["updated_at", "2024-03-11 23:18:06.665183"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Tokyo"], ["description", "A bustling metropolis that offers a unique blend of the traditional and the ultra-modern."], ["created_at", "2024-03-11 23:18:06.666817"], ["updated_at", "2024-03-11 23:18:06.666817"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "New York City"], ["description", "The Big Apple, known for its vibrant culture and iconic skyline."], ["created_at", "2024-03-11 23:18:06.667870"], ["updated_at", "2024-03-11 23:18:06.667870"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:20:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 195)
+  Rendered layout layouts/application.html.erb (Duration: 50.1ms | Allocations: 38794)
+Completed 200 OK in 56ms (Views: 52.2ms | ActiveRecord: 0.0ms | Allocations: 43133)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:20:54 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1859)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 2179)
+
+
+Started GET "/destinations" for 127.0.0.1 at 2024-03-11 19:21:16 -0400
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.2ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  Rendered destinations/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 10474)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 12012)
+Completed 200 OK in 34ms (Views: 10.1ms | ActiveRecord: 2.0ms | Allocations: 19312)
+
+
+Started GET "/destinations" for 127.0.0.1 at 2024-03-11 19:24:11 -0400
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.3ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  Rendered destinations/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 693)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 2026)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 2335)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (1.1ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Paris"], ["description", "The City of Light is known for its cafe culture and the Eiffel Tower."], ["created_at", "2024-03-11 23:33:29.412865"], ["updated_at", "2024-03-11 23:33:29.412865"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Tokyo"], ["description", "A bustling metropolis that offers a unique blend of the traditional and the ultra-modern."], ["created_at", "2024-03-11 23:33:29.414996"], ["updated_at", "2024-03-11 23:33:29.414996"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "New York City"], ["description", "The Big Apple, known for its vibrant culture and iconic skyline."], ["created_at", "2024-03-11 23:33:29.416047"], ["updated_at", "2024-03-11 23:33:29.416047"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "United States"], ["description", "A diverse country with both natural wonders and vibrant cities."], ["created_at", "2024-03-11 23:33:29.417020"], ["updated_at", "2024-03-11 23:33:29.417020"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.4ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Canada"], ["description", "Known for its vast landscapes and polite residents."], ["created_at", "2024-03-11 23:33:29.417972"], ["updated_at", "2024-03-11 23:33:29.417972"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Mexico"], ["description", "A country rich in culture, cuisine, and stunning beaches."], ["created_at", "2024-03-11 23:33:29.418917"], ["updated_at", "2024-03-11 23:33:29.418917"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "France"], ["description", "Home to iconic landmarks like the Eiffel Tower and the Louvre."], ["created_at", "2024-03-11 23:33:29.421148"], ["updated_at", "2024-03-11 23:33:29.421148"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Italy"], ["description", "A country celebrated for its art, architecture, and culinary traditions."], ["created_at", "2024-03-11 23:33:29.422246"], ["updated_at", "2024-03-11 23:33:29.422246"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Spain"], ["description", "Famous for its festive culture, historical cities, and beautiful beaches."], ["created_at", "2024-03-11 23:33:29.423172"], ["updated_at", "2024-03-11 23:33:29.423172"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Paris"], ["description", "The City of Light is known for its cafe culture and the Eiffel Tower."], ["created_at", "2024-03-11 23:33:29.424166"], ["updated_at", "2024-03-11 23:33:29.424166"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Tokyo"], ["description", "A bustling metropolis that offers a unique blend of the traditional and the ultra-modern."], ["created_at", "2024-03-11 23:33:29.425107"], ["updated_at", "2024-03-11 23:33:29.425107"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "New York City"], ["description", "The Big Apple, known for its vibrant culture and iconic skyline."], ["created_at", "2024-03-11 23:33:29.425983"], ["updated_at", "2024-03-11 23:33:29.425983"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "destinations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "destinations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240311231345)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-03-11 23:33:53.952502', '2024-03-11 23:33:53.952504') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '64f90c924216a5778e522e09f1cb4985dc71637b', '2024-03-11 23:33:53.953396', '2024-03-11 23:33:53.953397') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "destinations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "destinations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240311231345)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-03-11 23:33:53.956995', '2024-03-11 23:33:53.956995') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-03-11 23:33:53.957578' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '64f90c924216a5778e522e09f1cb4985dc71637b', '2024-03-11 23:33:53.958156', '2024-03-11 23:33:53.958157') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.5ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Paris"], ["description", "The City of Light is known for its cafe culture and the Eiffel Tower."], ["created_at", "2024-03-11 23:33:53.969477"], ["updated_at", "2024-03-11 23:33:53.969477"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Tokyo"], ["description", "A bustling metropolis that offers a unique blend of the traditional and the ultra-modern."], ["created_at", "2024-03-11 23:33:53.971022"], ["updated_at", "2024-03-11 23:33:53.971022"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "New York City"], ["description", "The Big Apple, known for its vibrant culture and iconic skyline."], ["created_at", "2024-03-11 23:33:53.972119"], ["updated_at", "2024-03-11 23:33:53.972119"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "United States"], ["description", "A diverse country with both natural wonders and vibrant cities."], ["created_at", "2024-03-11 23:33:53.973099"], ["updated_at", "2024-03-11 23:33:53.973099"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Canada"], ["description", "Known for its vast landscapes and polite residents."], ["created_at", "2024-03-11 23:33:53.974022"], ["updated_at", "2024-03-11 23:33:53.974022"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Mexico"], ["description", "A country rich in culture, cuisine, and stunning beaches."], ["created_at", "2024-03-11 23:33:53.974956"], ["updated_at", "2024-03-11 23:33:53.974956"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "France"], ["description", "Home to iconic landmarks like the Eiffel Tower and the Louvre."], ["created_at", "2024-03-11 23:33:53.975867"], ["updated_at", "2024-03-11 23:33:53.975867"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Italy"], ["description", "A country celebrated for its art, architecture, and culinary traditions."], ["created_at", "2024-03-11 23:33:53.976795"], ["updated_at", "2024-03-11 23:33:53.976795"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Spain"], ["description", "Famous for its festive culture, historical cities, and beautiful beaches."], ["created_at", "2024-03-11 23:33:53.977719"], ["updated_at", "2024-03-11 23:33:53.977719"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Paris"], ["description", "The City of Light is known for its cafe culture and the Eiffel Tower."], ["created_at", "2024-03-11 23:33:53.978650"], ["updated_at", "2024-03-11 23:33:53.978650"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "Tokyo"], ["description", "A bustling metropolis that offers a unique blend of the traditional and the ultra-modern."], ["created_at", "2024-03-11 23:33:53.979610"], ["updated_at", "2024-03-11 23:33:53.979610"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDestination Create (0.3ms)[0m  [1m[32mINSERT INTO "destinations" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "New York City"], ["description", "The Big Apple, known for its vibrant culture and iconic skyline."], ["created_at", "2024-03-11 23:33:53.980519"], ["updated_at", "2024-03-11 23:33:53.980519"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/destinations" for 127.0.0.1 at 2024-03-11 19:34:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Load (0.0ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:5
+  Rendered destinations/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 10699)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 48126)
+Completed 200 OK in 49ms (Views: 33.2ms | ActiveRecord: 6.6ms | Allocations: 58202)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:35:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 195)
+  Rendered layout layouts/application.html.erb (Duration: 55.3ms | Allocations: 37672)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 0.0ms | Allocations: 42011)
+
+
+Started GET "/index" for 127.0.0.1 at 2024-03-11 19:36:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:37:20 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 114)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 17069)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 18150)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:38:56 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 1653)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 1929)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:40:46 -0400
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 17202)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 18288)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:41:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 195)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 37760)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 42098)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:46:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mDestination Pluck (0.0ms)[0m  [1m[34mSELECT "destinations"."name" FROM "destinations"[0m
+  ↳ app/views/home/index.html.erb:5
+  Rendered home/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 12499)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 12630)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms | Allocations: 16897)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;       @destinations.each do |destination| 
+                             ^^^^^):
+     8:     
+     9:     <h2>Destinations:</h2>
+    10:     <ul>
+    11:       <% @destinations.each do |destination| %>
+    12:         <li>
+    13:           <strong><%= destination.name %></strong>: <%= destination.description %>
+    14:         </li>
+  
+app/views/home/index.html.erb:11
+Started GET "/" for 127.0.0.1 at 2024-03-11 19:49:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 206)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 37727)
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.0ms | Allocations: 42065)
+
+
+Started GET "/destinations" for 127.0.0.1 at 2024-03-11 19:49:28 -0400
+Processing by DestinationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Pluck (0.1ms)[0m  [1m[34mSELECT "destinations"."name" FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:7
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:13
+  Rendered destinations/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 13361)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 15214)
+Completed 200 OK in 29ms (Views: 13.8ms | ActiveRecord: 1.4ms | Allocations: 21540)
+
+
+Started GET "/destinations?country=Paris&commit=Search" for 127.0.0.1 at 2024-03-11 19:49:35 -0400
+Processing by DestinationsController#index as HTML
+  Parameters: {"country"=>"Paris", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering destinations/index.html.erb within layouts/application
+  [1m[36mDestination Pluck (0.1ms)[0m  [1m[34mSELECT "destinations"."name" FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:7
+  [1m[36mDestination Load (0.1ms)[0m  [1m[34mSELECT "destinations".* FROM "destinations"[0m
+  ↳ app/views/destinations/index.html.erb:13
+  Rendered destinations/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2717)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4366)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 4682)
+
+
