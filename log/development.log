@@ -356,3 +356,178 @@ Processing by DestinationsController#index as HTML
 Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 4497)
 
 
+Started GET "/" for 127.0.0.1 at 2024-03-11 20:20:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 5142)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5273)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 9539)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_registration_path' for #<ActionView::Base:0x0000000000b748>
+
+'.freeze; @output_buffer.append=( link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' ); @output_buffer.safe_append='
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^):
+    2: 
+    3: <h1>Welcome to Friend2Fly</h1>
+    4: 
+    5: <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
+    6: 
+    7: <p>Discover your next adventure with us! Explore destinations, find travel guides, and share your experiences.</p>
+    8: 
+  
+app/views/home/index.html.erb:5
+Started GET "/" for 127.0.0.1 at 2024-03-11 20:22:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 5142)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5273)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 9537)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_registration_path' for #<ActionView::Base:0x0000000000b748>
+
+'.freeze; @output_buffer.append=( link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' ); @output_buffer.safe_append='
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^):
+    2: 
+    3: <h1>Welcome to Friend2Fly</h1>
+    4: 
+    5: <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
+    6: 
+    7: <p>Discover your next adventure with us! Explore destinations, find travel guides, and share your experiences.</p>
+    8: 
+  
+app/views/home/index.html.erb:5
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240312002532)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240312002532') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-03-11 20:29:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 411)
+  Rendered layout layouts/application.html.erb (Duration: 715.8ms | Allocations: 106819)
+Completed 200 OK in 723ms (Views: 717.9ms | ActiveRecord: 0.0ms | Allocations: 112267)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-11 20:29:41 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 244)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 559)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4142)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 5582)
+Completed 200 OK in 34ms (Views: 13.6ms | ActiveRecord: 2.7ms | Allocations: 20725)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-03-11 20:29:46 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 159)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1931)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3301)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 5175)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-11 20:29:53 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 934)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2192)
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 3098)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-11 20:31:11 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 72)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2175)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2940)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-03-11 20:31:49 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 119)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2160)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2981)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-03-11 20:31:50 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 119)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2158)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 2973)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-03-11 20:31:50 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1009)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2375)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3653)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-03-11 20:31:54 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 617)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 1872)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 2620)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-03-11 20:31:55 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 116)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 617)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1872)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2623)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-11 20:31:56 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 72)
+  Rendered /Users/pablolizardi/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 922)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2177)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 2970)
+
+
