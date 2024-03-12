@@ -1,20 +1,26 @@
 <!-- app/views/destinations/index.html.erb -->
 
-<h1>Where do you want to go?</h1>
+<h1>Find Your Next Destination</h1>
 
 <%= form_with(url: destinations_path, method: "get") do |form| %>
-  <%= form.label :country, 'Choose a country:' %>
-  <%= form.select :country, Destination.pluck(:name).uniq, include_blank: true %>
+  <%= form.label :destination_id, 'Choose a destination:' %>
+  <%= form.select :destination_id, Destination.all.map { |d| [d.name, d.id] }, include_blank: true %>
   <%= form.submit "Search" %>
 <% end %>
 
-<h2>Destinations:</h2>
-<ul>
-  <% @destinations.each do |destination| %>
-    <li>
-      <strong><%= destination.name %></strong>: <%= destination.description %>
-    </li>
-  <% end %>
-</ul>
+<hr>
+
+<% if @destinations.present? %>
+  <ul>
+    <% @destinations.each do |destination| %>
+      <li>
+        <strong><%= destination.name %></strong>: <%= destination.description %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Please select a destination to view its details.</p>
+<% end %>
+
 
     
