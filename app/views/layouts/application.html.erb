@@ -15,7 +15,8 @@
   <%= link_to 'Sign up', new_user_registration_path %> |
   <%= link_to 'Login', new_user_session_path %> |
   <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-
+  <%= link_to 'Profile', profile_path %>
+  <%= link_to 'Home', root_path %>
   <% if user_signed_in? %>
   <p>Welcome back, <%= current_user.name %></p>
 <% end %>
