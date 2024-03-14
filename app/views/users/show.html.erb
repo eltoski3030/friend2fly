@@ -1,4 +1,17 @@
 
 <h1>User Profile</h1>
-<p>Username: <%= @user.username %></p>
-<p>Email: <%= @user.email %></p>
+<h1><%= @user.email %>'s Profile</h1>
+
+<h2>Your Destinations</h2>
+<% if @destinations.present? %>
+  <% @destinations.each do |destination| %>
+    <div>
+      <strong>Name:</strong> <%= destination.name %><br>
+      <strong>Description:</strong> <%= destination.description %><br>
+      <%= link_to 'Edit', edit_destination_path(destination) %> |
+      <%= link_to 'Delete', destination, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+<% else %>
+  <p>You have not added any destinations yet.</p>
+<% end %>

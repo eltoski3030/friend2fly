@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   get 'home/index'
-  resources :destinations, only: [:index, :show, :new, :create]
+  resources :destinations
   devise_for :users
   
   get 'profile', to: 'users#show'
