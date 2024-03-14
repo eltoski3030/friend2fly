@@ -14,7 +14,12 @@
   <ul>
     <% @destinations.each do |destination| %>
       <li>
-        <strong><%= destination.name %></strong>: <%= destination.description %>
+        <strong><%= destination.name %></strong>: <%= destination.description %><br>
+        <% if destination.user.present? %>
+          Added by: <%= destination.user.email %> on <%= destination.created_at.strftime("%B %d, %Y at %H:%M") %>
+        <% else %>
+          Creator unknown
+        <% end %>
       </li>
     <% end %>
   </ul>
@@ -23,4 +28,4 @@
 <% end %>
 
 <%= link_to 'Add New Destination', new_destination_path %>
-    
+
