@@ -1,6 +1,7 @@
 
 <h1>User Profile</h1>
-<h1><%= @user.email %>'s Profile</h1>
+<h1><%= @user.username %>'s Profile</h1>
+<p>Email: <%= @user.email %></p>
 
 <h2>Your Destinations</h2>
 <% if @destinations.present? %>
