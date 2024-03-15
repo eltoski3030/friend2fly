@@ -1,3 +1,29 @@
-<h1>Destinations#show</h1>
-<p>Find me in app/views/destinations/show.html.erb</p>
-<p>Created by: <%= @destination.user.email %> on <%= @destination.created_at.strftime("%B %d, %Y at %H:%M") %></p>
+<h1><%= @destination.name %></h1>
+<p><%= @destination.description %></p>
+
+<p>Added by: <%= @destination.user.email %> on <%= @destination.created_at.strftime("%B %d, %Y at %H:%M") %></p>
+
+<hr>
+
+<h2>Comments</h2>
+<% if @comments.any? %>
+  <% @comments.each do |comment| %>
+    <div>
+      <p><%= comment.content %></p>
+      <small>Commented by: <%= comment.user.email %> on <%= comment.created_at.strftime("%B %d, %Y at %H:%M") %></small>
+    </div>
+  <% end %>
+<% else %>
+  <p>No comments yet.</p>
+<% end %>
+
+<hr>
+
+<%= form_with(model: [@destination, @comment], local: true) do |form| %>
+    <div>
+      <%= form.label :content %><br>
+      <%= form.text_area :content %>
+    </div>
+  
+    <%= form.submit "Post Comment" %>
+  <% end %>

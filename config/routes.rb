@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   
   root 'home#index'
   get 'home/index'
-  resources :destinations
+  resources :destinations do
+    resources :comments, only: [:create] # Add :edit, :update, :destroy as needed later
+  end
   devise_for :users
   
   get 'profile', to: 'users#show'

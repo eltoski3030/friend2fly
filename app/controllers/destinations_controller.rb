@@ -1,6 +1,6 @@
 class DestinationsController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
-  before_action :set_destination, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_destination, only: [:edit, :update, :destroy, :show]
   before_action :check_user, only: [:edit, :update, :destroy]
 
   def index
@@ -18,6 +18,12 @@ class DestinationsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    # @destination is set by set_destination
+    @comments = @destination.comments.where(parent_id: nil) # Only top-level comments
+    @comment = Comment.new # Prepares a new comment for the form
   end
 
   def edit
@@ -51,3 +57,4 @@ class DestinationsController < ApplicationController
     params.require(:destination).permit(:name, :description)
   end
 end
+

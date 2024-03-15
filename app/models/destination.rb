@@ -3,4 +3,5 @@ class Destination < ApplicationRecord
   
  
   validates :name, :description, presence: true
+  has_many :comments, dependent: :destroy
 end
