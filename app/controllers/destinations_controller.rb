@@ -21,13 +21,13 @@ class DestinationsController < ApplicationController
   end
 
   def show
-    # @destination is set by set_destination
-    @comments = @destination.comments.where(parent_id: nil) # Only top-level comments
-    @comment = Comment.new # Prepares a new comment for the form
+    
+    @comments = @destination.comments.where(parent_id: nil) 
+    @comment = Comment.new 
   end
 
   def edit
-    # @destination is already set by set_destination
+    
   end
 
   def update
@@ -54,7 +54,8 @@ class DestinationsController < ApplicationController
   end
 
   def destination_params
-    params.require(:destination).permit(:name, :description)
+    params.require(:destination).permit(:name, :description, :budget, :date, :duration)
   end
+  
 end
 

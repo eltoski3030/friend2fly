@@ -1,17 +1,43 @@
-<h1>Add a New Destination</h1>
+<% if @destination.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
+
+    <ul>
+    <% @destination.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_with model: @destination, local: true do |form| %>
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
+  
   <div>
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
+
+  <div>
+    <%= form.label :budget, 'Budget ($)' %>
+    <%= form.number_field :budget, step: 0.01 %>
+  </div>
+  
+  <div>
+    <%= form.label :date, 'Travel Date' %>
+    <%= form.date_field :date %>
+  </div>
+  
+  <div>
+    <%= form.label :duration, 'Duration (days)' %>
+    <%= form.number_field :duration %>
+  </div>
+
   <div>
     <%= form.submit "Create Destination" %>
   </div>
 <% end %>
-
 
