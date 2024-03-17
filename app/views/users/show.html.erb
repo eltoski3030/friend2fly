@@ -9,9 +9,12 @@
     <div>
       <strong>Name:</strong> <%= destination.name %><br>
       <strong>Description:</strong> <%= destination.description %><br>
-      <%= link_to 'Edit', edit_destination_path(destination) %> |
-      <%= link_to 'Delete', destination, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_destination_path(destination) %> 
+      <%= button_to 'Delete', destination_path(destination), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      
     </div>
+    
   <% end %>
 <% else %>
   <p>You have not added any destinations yet.</p>

@@ -2,14 +2,19 @@
 
 <h1>Welcome to Friend2Fly</h1>
 
-
-
 <p>Discover your next adventure with us! Explore destinations, find travel guides, and share your experiences.</p>
-<%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
-<div>
-  <h2>Featured Destinations</h2>
-  <!-- Placeholder for featured destinations -->
-  <ul>
-    <li><a href="/destinations">View all destinations</a></li>
-  </ul>
-</div>
+
+<% if user_signed_in? %>
+  <div>
+    <h2>Featured Destinations</h2>
+    <!-- Visible only to authenticated users -->
+    <ul>
+      <li><%= link_to 'View all destinations', destinations_path %></li>
+    </ul>
+  </div>
+<% else %>
+  <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %> or
+  <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
+  <p>Sign up or log in to view all destinations and start sharing your experiences.</p>
+<% end %>
+
