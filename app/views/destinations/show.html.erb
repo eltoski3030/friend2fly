@@ -1,4 +1,8 @@
 <h1><%= @destination.name %></h1>
+<%= link_to 'Upvote', upvote_destination_path(@destination), method: :post, class: "btn btn-success" %>
+<%= link_to 'Downvote', downvote_destination_path(@destination), method: :post, class: "btn btn-danger" %>
+
+<p>Current Rating: <%= @destination.rating %></p>
 <p><%= @destination.description %></p>
 
 <p>Added by: <%= @destination.user.email %> on <%= @destination.created_at.strftime("%B %d, %Y at %H:%M") %></p>

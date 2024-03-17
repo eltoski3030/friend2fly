@@ -17,6 +17,7 @@
         <%= link_to destination.name, destination_path(destination), class: "destination-link" %>: <%= destination.description %><br>
         <% if destination.user.present? %>
           Added by: <%= destination.user.email %> on <%= destination.created_at.strftime("%B %d, %Y at %H:%M") %>
+          <p>Current Rating: <%= destination.rating %></p>
         <% else %>
           Creator unknown
         <% end %>

@@ -57,5 +57,31 @@ class DestinationsController < ApplicationController
     params.require(:destination).permit(:name, :description, :budget, :date, :duration)
   end
   
+  def upvote
+    @destination = Destination.find(params[:id])
+    vote = Vote.find_or_initialize_by(destination: @destination, user: current_user)
+    
+    if vote.new_record? || vote.value != 1
+      vote.value = 1
+      vote.save
+      redirect_to @destination, notice: 'Thanks for your vote!'
+    else
+      redirect_to @destination, alert: 'You have already upvoted this destination.'
+    end
+  end
+  
+  def downvote
+    @destination = Destination.find(params[:id])
+    vote = Vote.find_or_initialize_by(destination: @destination, user: current_user)
+    
+    if vote.new_record? || vote.value != -1
+      vote.value = -1
+      vote.save
+      redirect_to @destination, notice: 'Your vote has been recorded.'
+    else
+      redirect_to @destination, alert: 'You have already downvoted this destination.'
+    end
+  end
+  
 end
 
