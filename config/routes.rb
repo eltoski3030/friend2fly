@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'users/show'
-  
+
   root 'home#index'
   get 'home/index'
+  get 'destinations/index'
   resources :destinations do
     member do
       post 'upvote'
