@@ -2,15 +2,32 @@
 
 <h1>Welcome to Friend2Fly</h1>
 
+<% if user_signed_in? %>
+      <p>Welcome back, <%= current_user.name %></p>
+    <% end %>
+
 <p>Discover your next adventure with us! Explore destinations, find travel guides, and share your experiences.</p>
 
 <% if user_signed_in? %>
   <div>
     <h2>Featured Destinations</h2>
     
-    <ul>
-      <li><%= link_to 'View all destinations', destinations_path %></li>
-    </ul>
+    <%= form_with url: destinations_path, method: :get, local: true, class: "d-flex flex-column" do |form| %>
+      <%= form.text_field :name, placeholder: "Name", class: "form-control mb-2" %>
+      <%= form.text_field :description, placeholder: "Description", class: "form-control mb-2" %>
+    
+      <%= form.number_field :max_budget, placeholder: "Max Budget ($)", class: "form-control mb-2", step: "any" %>
+    
+      <%= form.date_field :start_date, placeholder: "Start Date", class: "form-control mb-2" %>
+      <%= form.date_field :end_date, placeholder: "End Date", class: "form-control mb-2" %>
+    
+      <%= form.number_field :duration, placeholder: "Duration (days)", class: "form-control mb-2" %>
+    
+      <%= form.submit "Search", class: "btn btn-outline-success mb-2" %>
+      <%= link_to 'Search All', destinations_path, class: "btn btn-outline-primary" %>
+    <% end %>
+    
+    
   </div>
 <% else %>
   <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %> or

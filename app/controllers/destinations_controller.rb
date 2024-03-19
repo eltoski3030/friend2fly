@@ -3,13 +3,26 @@ class DestinationsController < ApplicationController
   before_action :set_destination, only: [:edit, :update, :destroy, :show]
   before_action :check_user, only: [:edit, :update, :destroy]
 
+  
   def index
-    @destinations = params[:destination_id].present? ? [Destination.find(params[:destination_id])] : Destination.all
+    @destinations = Destination.all
+    
+    @destinations = @destinations.where("name LIKE ?", "%#{params[:name]}%") if params[:name].present?
+    @destinations = @destinations.where("description LIKE ?", "%#{params[:description]}%") if params[:description].present?
+    @destinations = @destinations.where("budget <= ?", params[:max_budget].to_f) if params[:max_budget].present?
+  
+    if params[:start_date].present? && params[:end_date].present?
+      @destinations = @destinations.where(travel_date: params[:start_date]..params[:end_date])
+    end
+  
+    @destinations = @destinations.where("duration = ?", params[:duration].to_i) if params[:duration].present?
   end
+  
 
-  def new
-    @destination = Destination.new
-  end
+    def new
+      @destination = Destination.new
+    end
+
 
   def create
     @destination = current_user.destinations.build(destination_params)
