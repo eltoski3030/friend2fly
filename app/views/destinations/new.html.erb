@@ -1,43 +1,65 @@
-<% if @destination.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
-
-    <ul>
-    <% @destination.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <%= form_with model: @destination, local: true do |form| %>
   <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :city, "City" %>
+    <%= form.text_field :city %>
   </div>
-  
+
   <div>
-    <%= form.label :description %>
+    <%= form.label :country, "Country" %>
+    <%= form.select :country, 
+      [
+        ['France', 'France'], ['Spain', 'Spain'], ['United States', 'United States'],
+        ['China', 'China'], ['Italy', 'Italy'], ['Turkey', 'Turkey'],
+        ['Mexico', 'Mexico'], ['Thailand', 'Thailand'], ['Germany', 'Germany'],
+        ['United Kingdom', 'United Kingdom'], ['Japan', 'Japan'], ['Australia', 'Australia'],
+        ['Vietnam', 'Vietnam'], ['Russia', 'Russia'], ['Canada', 'Canada'],
+        ['South Korea', 'South Korea'], ['Netherlands', 'Netherlands'], ['Greece', 'Greece'],
+        ['Brazil', 'Brazil'], ['India', 'India'], ['Portugal', 'Portugal'],
+        ['Poland', 'Poland'], ['Malaysia', 'Malaysia'], ['Saudi Arabia', 'Saudi Arabia'],
+        ['Sweden', 'Sweden'], ['Austria', 'Austria'], ['Indonesia', 'Indonesia'],
+        ['Belgium', 'Belgium'], ['Switzerland', 'Switzerland'], ['Denmark', 'Denmark'],
+        ['Norway', 'Norway'], ['Singapore', 'Singapore'], ['Argentina', 'Argentina'],
+        ['Morocco', 'Morocco'], ['Czech Republic', 'Czech Republic'], ['Ireland', 'Ireland'],
+        ['New Zealand', 'New Zealand'], ['South Africa', 'South Africa'], ['Finland', 'Finland'],
+        ['Hungary', 'Hungary'], ['Israel', 'Israel'], ['Chile', 'Chile'],
+        ['Philippines', 'Philippines'], ['Egypt', 'Egypt'], ['Colombia', 'Colombia'],
+        ['UAE', 'UAE'], ['Croatia', 'Croatia'], ['Peru', 'Peru'],
+        ['Qatar', 'Qatar'], ['Romania', 'Romania'], ['Ukraine', 'Ukraine'],
+        ['Kenya', 'Kenya'], ['Sri Lanka', 'Sri Lanka'], ['Ecuador', 'Ecuador'],
+        ['Slovakia', 'Slovakia'], ['Bulgaria', 'Bulgaria'], ['Tunisia', 'Tunisia'],
+        ['Jordan', 'Jordan'], ['Luxembourg', 'Luxembourg'], ['Costa Rica', 'Costa Rica'],
+        ['Panama', 'Panama'], ['Lebanon', 'Lebanon'], ['Cyprus', 'Cyprus'],
+        ['Latvia', 'Latvia'], ['Lithuania', 'Lithuania'], ['Nepal', 'Nepal'],
+        ['Iceland', 'Iceland'], ['Cambodia', 'Cambodia'], ['Uruguay', 'Uruguay'],
+        ['Kazakhstan', 'Kazakhstan'], ['Oman', 'Oman'], ['Laos', 'Laos'],
+        ['Cuba', 'Cuba'], ['Belize', 'Belize'], ['Georgia', 'Georgia'],
+        ['Armenia', 'Armenia'], ['Mongolia', 'Mongolia'], ['Myanmar', 'Myanmar']
+      ], 
+      { include_blank: "Select Country" }, 
+      { class: "form-control" } %>
+  </div>
+
+  <div>
+    <%= form.label :description, "Description" %>
     <%= form.text_area :description %>
   </div>
 
   <div>
-    <%= form.label :budget, 'Budget ($)' %>
+    <%= form.label :budget, "Budget ($)" %>
     <%= form.number_field :budget, step: 0.01 %>
   </div>
   
   <div>
-    <%= form.label :date, 'Travel Date' %>
+    <%= form.label :date, "Travel Date" %>
     <%= form.date_field :date %>
   </div>
   
   <div>
-    <%= form.label :duration, 'Duration (days)' %>
+    <%= form.label :duration, "Duration (days)" %>
     <%= form.number_field :duration %>
   </div>
 
   <div>
-    <%= form.submit "Create Destination" %>
+    <%= form.submit "Create Destination", class: "btn btn-primary" %>
   </div>
 <% end %>
-

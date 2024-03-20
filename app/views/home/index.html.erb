@@ -3,35 +3,67 @@
 <h1>Welcome to Friend2Fly</h1>
 
 <% if user_signed_in? %>
-      <p>Welcome back, <%= current_user.name %></p>
-    <% end %>
+  <p>Welcome back, <%= current_user.name %></p>
+<% end %>
 
 <p>Discover your next adventure with us! Explore destinations, find travel guides, and share your experiences.</p>
 
 <% if user_signed_in? %>
   <div>
     <h2>Featured Destinations</h2>
-    
+
     <%= form_with url: destinations_path, method: :get, local: true, class: "d-flex flex-column" do |form| %>
-      <%= form.text_field :name, placeholder: "Name", class: "form-control mb-2" %>
-      <%= form.text_field :description, placeholder: "Description", class: "form-control mb-2" %>
-    
+      <%= form.label :country, 'Country', class: "mb-2" %>
+      <%= form.select :country,
+      [
+        ['France', 'France'], ['Spain', 'Spain'], ['United States', 'United States'],
+        ['China', 'China'], ['Italy', 'Italy'], ['Turkey', 'Turkey'],
+        ['Mexico', 'Mexico'], ['Thailand', 'Thailand'], ['Germany', 'Germany'],
+        ['United Kingdom', 'United Kingdom'], ['Japan', 'Japan'], ['Australia', 'Australia'],
+        ['Vietnam', 'Vietnam'], ['Russia', 'Russia'], ['Canada', 'Canada'],
+        ['South Korea', 'South Korea'], ['Netherlands', 'Netherlands'], ['Greece', 'Greece'],
+        ['Brazil', 'Brazil'], ['India', 'India'], ['Portugal', 'Portugal'],
+        ['Poland', 'Poland'], ['Malaysia', 'Malaysia'], ['Saudi Arabia', 'Saudi Arabia'],
+        ['Sweden', 'Sweden'], ['Austria', 'Austria'], ['Indonesia', 'Indonesia'],
+        ['Belgium', 'Belgium'], ['Switzerland', 'Switzerland'], ['Denmark', 'Denmark'],
+        ['Norway', 'Norway'], ['Singapore', 'Singapore'], ['Argentina', 'Argentina'],
+        ['Morocco', 'Morocco'], ['Czech Republic', 'Czech Republic'], ['Ireland', 'Ireland'],
+        ['New Zealand', 'New Zealand'], ['South Africa', 'South Africa'], ['Finland', 'Finland'],
+        ['Hungary', 'Hungary'], ['Israel', 'Israel'], ['Chile', 'Chile'],
+        ['Philippines', 'Philippines'], ['Egypt', 'Egypt'], ['Colombia', 'Colombia'],
+        ['UAE', 'UAE'], ['Croatia', 'Croatia'], ['Peru', 'Peru'],
+        ['Qatar', 'Qatar'], ['Romania', 'Romania'], ['Ukraine', 'Ukraine'],
+        ['Kenya', 'Kenya'], ['Sri Lanka', 'Sri Lanka'], ['Ecuador', 'Ecuador'],
+        ['Slovakia', 'Slovakia'], ['Bulgaria', 'Bulgaria'], ['Tunisia', 'Tunisia'],
+        ['Jordan', 'Jordan'], ['Luxembourg', 'Luxembourg'], ['Costa Rica', 'Costa Rica'],
+        ['Panama', 'Panama'], ['Lebanon', 'Lebanon'], ['Cyprus', 'Cyprus'],
+        ['Latvia', 'Latvia'], ['Lithuania', 'Lithuania'], ['Nepal', 'Nepal'],
+        ['Iceland', 'Iceland'], ['Cambodia', 'Cambodia'], ['Uruguay', 'Uruguay'],
+        ['Kazakhstan', 'Kazakhstan'], ['Oman', 'Oman'], ['Laos', 'Laos'],
+        ['Cuba', 'Cuba'], ['Belize', 'Belize'], ['Georgia', 'Georgia'],
+        ['Armenia', 'Armenia'], ['Mongolia', 'Mongolia'], ['Myanmar', 'Myanmar']
+      ], 
+      { include_blank: "Select Country" }, 
+      { class: "form-control mb-2" } %>
+
+      <%= form.label :start_date, 'Starting from:', class: "mb-2" %>
+      <%= form.date_field :start_date, class: "form-control mb-2" %>
+
+      <%= form.label :end_date, 'Returning when:', class: "mb-2" %>
+      <%= form.date_field :end_date, class: "form-control mb-2" %>
+
       <%= form.number_field :max_budget, placeholder: "Max Budget ($)", class: "form-control mb-2", step: "any" %>
-    
-      <%= form.date_field :start_date, placeholder: "Start Date", class: "form-control mb-2" %>
-      <%= form.date_field :end_date, placeholder: "End Date", class: "form-control mb-2" %>
-    
       <%= form.number_field :duration, placeholder: "Duration (days)", class: "form-control mb-2" %>
-    
+
       <%= form.submit "Search", class: "btn btn-outline-success mb-2" %>
       <%= link_to 'Search All', destinations_path, class: "btn btn-outline-primary" %>
     <% end %>
-    
-    
   </div>
 <% else %>
   <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %> or
   <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
   <p>Sign up or log in to view all destinations and start sharing your experiences.</p>
 <% end %>
+
+
 

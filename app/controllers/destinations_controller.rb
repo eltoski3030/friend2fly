@@ -67,7 +67,7 @@ class DestinationsController < ApplicationController
   end
 
   def destination_params
-    params.require(:destination).permit(:name, :description, :budget, :date, :duration)
+    params.require(:destination).permit(:city, :country, :description, :budget, :date, :duration)
   end
   
   def upvote

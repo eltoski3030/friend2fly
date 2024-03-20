@@ -1,8 +1,8 @@
 <h1>Find Your Next Destination</h1>
 
 <%= form_with(url: destinations_path, method: "get") do |form| %>
-  <%= form.label :destination_id, 'Choose a destination:' %>
-  <%= form.select :destination_id, Destination.all.map { |d| [d.name, d.id] }, include_blank: true %>
+  <%= form.label :city, 'Choose a destination:' %>
+  <%= form.select :city, Destination.all.map { |d| [d.city, d.id] }, include_blank: true %>
   <%= form.submit "Search" %>
 <% end %>
 
@@ -12,13 +12,9 @@
   <ul>
     <% @destinations.each do |destination| %>
       <li>
-        <%= link_to destination.name, destination_path(destination), class: "destination-link" %>: <%= destination.description %><br>
-        <% if destination.user.present? %>
-          Added by: <%= destination.user.email %> on <%= destination.created_at.strftime("%B %d, %Y at %H:%M") %>
-          <p>Current Rating: <%= destination.rating %></p>
-        <% else %>
-          Creator unknown
-        <% end %>
+        <%= link_to destination.city, destination_path(destination), class: "destination-link" %>: <%= destination.description %><br>
+        Added by: <%= destination.user.email %> on <%= destination.created_at.strftime("%B %d, %Y at %H:%M") %>
+        <p>Current Rating: <%= destination.rating %></p>
       </li>
     <% end %>
   </ul>
@@ -27,3 +23,4 @@
 <% end %>
 
 <%= link_to 'Add New Destination', new_destination_path %>
+
